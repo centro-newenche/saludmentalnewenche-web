@@ -1,0 +1,258 @@
+import { useRef, useState } from "react";
+import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import Turnstile, { TESTING_SITE_KEY } from "../common/Turnstile";
+
+// Falls back to Cloudflare's public testing key so the widget works out
+// of the box in development. Set VITE_TURNSTILE_SITE_KEY in your .env
+// once you've created a real widget in the Cloudflare dashboard.
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || TESTING_SITE_KEY;
+
+// Aligned with the six program pages in the nav dropdown, plus a
+// catch-all for people who aren't sure yet. Edit freely — this is a
+// first pass based on the "motivos frecuentes de consulta" and the
+// program list from the working document.
+const motivos = [
+  "Orientación inicial (aún no estoy seguro/a)",
+  "Atención Adolescente (ansiedad, ánimo bajo, conducta, escuela)",
+  "Rehabilitación (consumo de alcohol u otras drogas)",
+  "Acompañamiento familiar y territorial",
+  "Orientación Familiar y psicoeducación",
+  "Colegios y Redes (coordinación institucional)",
+  "Capacitaciones (para equipos o instituciones)",
+  "Otro",
+];
+
+const modalidades = ["Online", "Presencial", "Domiciliaria", "Institucional"];
+
+const pasos = [
+  {
+    step: "1",
+    title: "Cuéntanos tu situación",
+    text: "Completa el formulario con la información general de tu consulta.",
+  },
+  {
+    step: "2",
+    title: "Te contactamos",
+    text: "Un profesional del equipo se comunicará contigo a la brevedad.",
+  },
+  {
+    step: "3",
+    title: "Definimos el apoyo",
+    text: "Evaluamos juntos qué modalidad y programa se ajustan mejor a tu situación.",
+  },
+];
+
+export default function ContactPage() {
+  const turnstileRef = useRef(null);
+  const [turnstileToken, setTurnstileToken] = useState(null);
+  const [status, setStatus] = useState(null); // null | "missing-captcha" | "error" | "success"
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!turnstileToken) {
+      setStatus("missing-captcha");
+      return;
+    }
+
+    // TODO: POST your form fields + turnstileToken to your backend.
+    // Your server must call Cloudflare's Siteverify API with the token
+    // and your SECRET key (never expose the secret key in the frontend)
+    // before treating the submission as trusted:
+    //   https://challenges.cloudflare.com/turnstile/v0/siteverify
+    //
+    // fetch("/api/contact", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({ ...formFields, turnstileToken }),
+    // });
+
+    setStatus("success");
+    turnstileRef.current?.reset();
+    setTurnstileToken(null);
+  }
+
+  return (
+    <main className="newenche space-y-16 pb-24 pt-28">
+      {/* Intro / encouragement */}
+      <section data-reveal className="reveal-up card-soft mx-auto max-w-4xl rounded-[32px] p-8 text-center md:p-14">
+        <p className="eyebrow mb-3 flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-[0.14em]">
+          <span className="eyebrow-tick" aria-hidden="true" />
+          Contacto
+        </p>
+        <h1 className="font-display mb-6 text-3xl font-semibold leading-tight md:text-4xl" style={{ color: "var(--pine)" }}>
+          Solicita tu orientación inicial
+        </h1>
+        <p className="text-body mx-auto mb-4 max-w-2xl text-lg text-justify">
+          Si un/a adolescente de tu familia está atravesando dificultades
+          emocionales, familiares, escolares, conductuales o relacionadas con
+          el consumo de alcohol u otras drogas, puedes escribirnos para
+          recibir una primera orientación.
+        </p>
+        <p className="text-body mx-auto mb-8 max-w-2xl text-lg text-justify">
+          En esta primera instancia buscamos comprender la situación general,
+          orientar los pasos posibles y evaluar, junto a ti, qué tipo de
+          apoyo puede ser más adecuado para tu hijo/a y tu familia.
+        </p>
+        <p className="pull-quote mx-auto max-w-xl text-xl md:text-2xl" style={{ color: "var(--pine)" }}>
+          "No buscamos solo contener una crisis. Buscamos acompañar procesos."
+        </p>
+      </section>
+
+      {/* What happens next */}
+      <section data-reveal className="reveal-up mx-auto grid max-w-4xl gap-4 sm:grid-cols-3">
+        {pasos.map((p) => (
+          <div key={p.step} className="card-soft rounded-2xl p-6">
+            <div
+              className="font-display mb-3 flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold text-white"
+              style={{ background: "var(--clay)" }}
+            >
+              {p.step}
+            </div>
+            <p className="mb-1 text-base font-semibold" style={{ color: "var(--pine)" }}>
+              {p.title}
+            </p>
+            <p className="text-sm text-slate-600">{p.text}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* Contact info + form */}
+      <section data-reveal className="reveal-up mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-start">
+        {/* Left: info */}
+        <div className="card-soft rounded-[32px] p-8 md:p-10">
+          <h2 className="font-display mb-3 text-xl font-semibold md:text-2xl" style={{ color: "var(--pine)" }}>
+            Otras formas de contactarnos
+          </h2>
+          <p className="text-body mb-6 text-base leading-relaxed">
+            Si prefieres un contacto más directo, también puedes escribirnos
+            por estos canales.
+          </p>
+          <ul className="space-y-4 text-sm">
+            <li className="flex items-start gap-3">
+              <span className="icon-chip mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full">
+                <FaWhatsapp />
+              </span>
+              <span className="text-body pt-1.5">+56 9 1234 5678</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="icon-chip mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full">
+                <FaEnvelope />
+              </span>
+              <span className="text-body pt-1.5">contacto@newenche.cl</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="icon-chip mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full">
+                <FaMapMarkerAlt />
+              </span>
+              <span className="text-body pt-1.5">Santiago, Chile</span>
+            </li>
+          </ul>
+          <p className="text-body mt-8 text-sm leading-relaxed opacity-80">
+            Tu información será tratada con confidencialidad. Escribirnos no
+            te compromete a nada: es un primer paso para conversar y ver
+            cómo podemos ayudarte.
+          </p>
+        </div>
+
+        {/* Right: form */}
+        <div className="card-soft rounded-[32px] p-8">
+          <form className="space-y-4" onSubmit={handleSubmit} noValidate>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="field-label mb-1 block text-sm font-medium">Nombre</label>
+                <input type="text" required placeholder="Tu nombre" className="field-input w-full rounded-lg px-4 py-2.5 text-sm transition" />
+              </div>
+              <div>
+                <label className="field-label mb-1 block text-sm font-medium">Teléfono</label>
+                <input type="tel" required placeholder="+56 9 0000 0000" className="field-input w-full rounded-lg px-4 py-2.5 text-sm transition" />
+              </div>
+            </div>
+
+            <div>
+              <label className="field-label mb-1 block text-sm font-medium">Correo electrónico</label>
+              <input type="email" required placeholder="tu@correo.com" className="field-input w-full rounded-lg px-4 py-2.5 text-sm transition" />
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="field-label mb-1 block text-sm font-medium">Edad del adolescente</label>
+                <input type="number" min="12" max="18" required placeholder="Ej: 15" className="field-input w-full rounded-lg px-4 py-2.5 text-sm transition" />
+              </div>
+              <div>
+                <label className="field-label mb-1 block text-sm font-medium">Comuna</label>
+                <input type="text" required placeholder="Tu comuna" className="field-input w-full rounded-lg px-4 py-2.5 text-sm transition" />
+              </div>
+            </div>
+
+            <div>
+              <label className="field-label mb-1 block text-sm font-medium">Motivo de consulta</label>
+              <select required defaultValue="" className="field-input w-full rounded-lg px-4 py-2.5 text-sm transition">
+                <option value="" disabled>
+                  Selecciona un motivo
+                </option>
+                {motivos.map((m) => (
+                  <option key={m} value={m}>
+                    {m}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="field-label mb-1 block text-sm font-medium">Modalidad de preferencia</label>
+              <select required defaultValue="" className="field-input w-full rounded-lg px-4 py-2.5 text-sm transition">
+                <option value="" disabled>
+                  Selecciona una modalidad
+                </option>
+                {modalidades.map((m) => (
+                  <option key={m} value={m}>
+                    {m}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="field-label mb-1 block text-sm font-medium">Mensaje</label>
+              <textarea rows={4} placeholder="Cuéntanos brevemente tu situación..." className="field-input w-full resize-none rounded-lg px-4 py-2.5 text-sm transition" />
+            </div>
+
+            {/* Captcha */}
+            <div>
+              <Turnstile
+                ref={turnstileRef}
+                siteKey={TURNSTILE_SITE_KEY}
+                onVerify={(token) => {
+                  setTurnstileToken(token);
+                  if (status === "missing-captcha") setStatus(null);
+                }}
+                onExpire={() => setTurnstileToken(null)}
+                onError={() => setTurnstileToken(null)}
+              />
+              {status === "missing-captcha" && (
+                <p className="mt-2 text-sm" style={{ color: "var(--clay)" }}>
+                  Por favor completa la verificación antes de enviar.
+                </p>
+              )}
+            </div>
+
+            {status === "success" && (
+              <p className="text-sm font-medium" style={{ color: "var(--pine)" }}>
+                ¡Gracias! Tu mensaje quedó registrado, te contactaremos pronto.
+              </p>
+            )}
+
+            <button
+              type="submit"
+              disabled={!turnstileToken}
+              className="btn-primary w-full rounded-lg px-6 py-3 font-semibold transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0"
+            >
+              Enviar mensaje
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+  );
+}

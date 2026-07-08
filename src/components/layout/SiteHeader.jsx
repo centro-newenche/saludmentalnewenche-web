@@ -1,4 +1,14 @@
-import { FaBars, FaBrain, FaEnvelope } from "react-icons/fa";
+import { FaBars, FaChevronDown, FaEnvelope } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+const programas = [
+  { name: "Atención Adolescente", href: "/programas/adolescente" },
+  { name: "Rehabilitación", href: "/programas/rehabilitacion" },
+  { name: "Acompañamiento", href: "/programas/acompanamiento" },
+  { name: "Orientación Familiar", href: "/programas/orientacion" },
+  { name: "Colegios y Redes", href: "/programas/colegios-redes" },
+  { name: "Capacitaciones", href: "/programas/capacitaciones" },
+];
 
 export default function SiteHeader({
   isScrolled,
@@ -6,13 +16,26 @@ export default function SiteHeader({
   onToggleMenu,
   onCloseMenu,
 }) {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleMobileNavClick = () => {
+    onCloseMenu();
+    scrollToTop();
+  };
+
   return (
-    <>
+    <div className="newenche">
       <header
-        className={`fixed left-0 top-0 z-50 w-full px-6 py-3 backdrop-blur-xl transition-all duration-300 ${isScrolled ? "border-b border-white bg-white shadow-md shadow-gray/90" : "border-b border-transparent bg-white"}`}
+        className={`fixed left-0 top-0 z-50 w-full px-6 py-3 backdrop-blur-xl transition-all duration-300 ${isScrolled ? "border-b border-[var(--line)] bg-white shadow-sm" : "border-b border-transparent bg-white"}`}
       >
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between">
-          <a href="/" className="flex items-center gap-3 cursor-pointer">
+          <Link
+            to="/"
+            className="flex items-center gap-3 cursor-pointer"
+            onClick={scrollToTop}
+          >
             <div className="flex h-14 w-14 items-center justify-center">
               <img
                 src="/logo-newenche-no-text.png"
@@ -20,35 +43,68 @@ export default function SiteHeader({
                 className=""
               />
             </div>
-            <span className="text-lg font-semibold tracking-wide text-slate-800">
+            <span
+              className="text-lg font-semibold tracking-wide"
+              style={{ color: "var(--pine)" }}
+            >
               Centro Newenche
             </span>
-          </a>
+          </Link>
 
-          <nav className="hidden items-center gap-6 text-sm text-slate-500 lg:flex">
-            <a href="#home" className="transition hover:text-emerald-600">
+          <nav className="hidden items-center gap-6 text-sm lg:flex">
+            <Link to="/" className="nav-link" onClick={scrollToTop}>
               Inicio
-            </a>
-            <a href="#quienes-somos" className="transition hover:text-emerald-600">
+            </Link>
+            <Link
+              to="/quienes-somos"
+              className="nav-link"
+              onClick={scrollToTop}
+            >
               Quiénes somos
-            </a>
-            <a href="#programas" className="transition hover:text-emerald-600">
-              Programas
-            </a>
-            <a href="#recursos" className="transition hover:text-emerald-600">
+            </Link>
+
+            {/* Programas: hover dropdown on desktop */}
+            <div className="group relative">
+              <Link
+                to="/programas"
+                className="nav-link flex items-center gap-1.5"
+                onClick={scrollToTop}
+              >
+                Programas
+                <FaChevronDown className="text-[10px] transition-transform duration-200 group-hover:rotate-180" />
+              </Link>
+
+              {/* pt-3 keeps the hover area continuous between the link and the panel below it */}
+              <div className="invisible absolute left-1/2 top-full w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                <div className="rounded-xl border border-[var(--line)] bg-white p-2 shadow-lg">
+                  {programas.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className="dropdown-link block rounded-lg px-3 py-2 text-sm"
+                      onClick={scrollToTop}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <Link to="/recursos" className="nav-link" onClick={scrollToTop}>
               Recursos
-            </a>
-            <a href="#contacto" className="transition hover:text-emerald-600">
+            </Link>
+            <Link to="/contacto" className="nav-link" onClick={scrollToTop}>
               Contacto
-            </a>
-            <a href="#faq" className="transition hover:text-emerald-600">
+            </Link>
+            <Link to="/faq" className="nav-link" onClick={scrollToTop}>
               FAQ
-            </a>
+            </Link>
           </nav>
 
           <button
             onClick={onToggleMenu}
-            className="mr-2 cursor-pointer rounded-lg border border-slate-200 px-3 py-2 text-xs text-slate-600 transition hover:border-emerald-400 hover:text-emerald-500 lg:hidden"
+            className="mr-2 cursor-pointer rounded-lg border border-[var(--line)] px-3 py-2 text-xs text-slate-600 transition hover:border-[var(--clay)] hover:text-[var(--clay)] lg:hidden"
           >
             <span className="flex items-center gap-2">
               <FaBars />
@@ -56,68 +112,84 @@ export default function SiteHeader({
             </span>
           </button>
 
-          <button className="hidden cursor-pointer rounded-lg bg-emerald-200 px-5 py-2 text-sm font-medium text-gray-500 shadow-sm shadow-sky-200 transition hover:bg-emerald-400 hover:text-white lg:inline-flex lg:items-center lg:gap-2">
+          <Link
+            to="/contacto"
+            className="btn-primary hidden cursor-pointer rounded-lg px-5 py-2 text-sm font-medium transition lg:inline-flex lg:items-center lg:gap-2"
+          >
             <FaEnvelope />
             Agenda tu consulta
-          </button>
+          </Link>
         </div>
       </header>
 
       {menuOpen && (
-        <div className="fixed left-0 top-[57px] z-40 w-full border-b border-sky-100 bg-white/95 p-4 shadow-lg shadow-sky-100/40 backdrop-blur-xl lg:hidden">
-          <div className="mx-auto flex max-w-6xl flex-col gap-3 pt-4 text-sm text-slate-500">
-            <a
-              href="#home"
-              onClick={onCloseMenu}
-              className="transition hover:text-emerald-600"
-            >
+        <div className="fixed left-0 top-[57px] z-40 w-full border-b border-[var(--line)] bg-white/95 p-4 shadow-lg backdrop-blur-xl lg:hidden">
+          <div className="mx-auto flex max-w-6xl flex-col gap-3 pt-4 text-sm">
+            <Link to="/" onClick={handleMobileNavClick} className="nav-link">
               Inicio
-            </a>
-            <a
-              href="#quienes-somos"
-              onClick={onCloseMenu}
-              className="transition hover:text-emerald-600"
+            </Link>
+            <Link
+              to="/quienes-somos"
+              onClick={handleMobileNavClick}
+              className="nav-link"
             >
               Quiénes somos
-            </a>
-            <a
-              href="#programas"
-              onClick={onCloseMenu}
-              className="transition hover:text-emerald-600"
-            >
-              Programas
-            </a>
-            <a
-              href="#recursos"
-              onClick={onCloseMenu}
-              className="transition hover:text-emerald-600"
+            </Link>
+
+            {/* Programas: always-expanded sub-list on mobile, visually nested */}
+            <div>
+              <Link
+                to="/programas"
+                onClick={handleMobileNavClick}
+                className="nav-link font-semibold"
+              >
+                Programas
+              </Link>
+              <div
+                className="mt-2 ml-3 flex flex-col gap-2.5 border-l-2 pl-3"
+                style={{ borderColor: "var(--line)" }}
+              >
+                {programas.map((item) => (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    onClick={handleMobileNavClick}
+                    className="nav-link text-[13px]"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <Link
+              to="/recursos"
+              onClick={handleMobileNavClick}
+              className="nav-link"
             >
               Recursos
-            </a>
-            <a
-              href="#contacto"
-              onClick={onCloseMenu}
-              className="transition hover:text-emerald-600"
+            </Link>
+            <Link
+              to="/contacto"
+              onClick={handleMobileNavClick}
+              className="nav-link"
             >
               Contacto
-            </a>
-            <a
-              href="#faq"
-              onClick={onCloseMenu}
-              className="transition hover:text-emerald-600"
-            >
+            </Link>
+            <Link to="/faq" onClick={handleMobileNavClick} className="nav-link">
               FAQ
-            </a>
-            <button
-              onClick={onCloseMenu}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-500 px-4 py-2 font-semibold text-white shadow-sm shadow-emerald-200"
+            </Link>
+            <Link
+              to="/contacto"
+              onClick={handleMobileNavClick}
+              className="btn-primary mt-2 inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-semibold transition"
             >
               <FaEnvelope />
               Agenda tu consulta
-            </button>
+            </Link>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
