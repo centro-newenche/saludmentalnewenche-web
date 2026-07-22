@@ -6,6 +6,7 @@ import {
   ADMIN_LOGIN_PATH,
   ADMIN_DASHBOARD_PATH,
 } from "../../config/adminRoutes";
+import { Helmet } from "react-helmet-async";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
@@ -81,6 +82,9 @@ export default function AdminDashboardPage() {
       className="newenche min-h-screen"
       style={{ background: "var(--sand)" }}
     >
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <div className="mx-auto max-w-5xl px-6 py-12">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
           <div>

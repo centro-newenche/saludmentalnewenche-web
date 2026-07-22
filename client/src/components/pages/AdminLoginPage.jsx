@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ADMIN_DASHBOARD_PATH } from "../../config/adminRoutes";
 import { useAdminAuth } from "../../context/AdminAuthContext";
+import { Helmet } from "react-helmet-async";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
@@ -51,6 +52,9 @@ export default function AdminLoginPage() {
       className="newenche flex min-h-screen items-center justify-center px-6 py-16"
       style={{ background: "var(--sand)" }}
     >
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <div className="card-soft w-full max-w-md rounded-[28px] p-8 sm:p-10">
         <div className="mb-8 flex flex-col items-center text-center">
           <img
