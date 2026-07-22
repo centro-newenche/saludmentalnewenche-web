@@ -30,8 +30,7 @@ export default function LandingSection({ programs }) {
             className="pull-quote mb-8 ml-7 max-w-xl text-2xl"
             style={{ color: "var(--pine)" }}
           >
-            Comprender antes de juzgar. <br />
-            Acompañar antes de etiquetar.
+            Construimos procesos terapéuticos que favorecen la recuperación, mediante un acompañamiento especializado en la adolescencia, cercano y humano
           </p>
 
           <div className="flex flex-wrap gap-4 ml-7 justify-center lg:justify-start">
@@ -51,7 +50,7 @@ export default function LandingSection({ programs }) {
         </div>
         <div className="lg:col-span-7 mt-8 lg:mt-0 lg:min-h-[85vh] flex items-stretch">
           <img
-            src="/landing-image.png"
+            src="/portada2.png"
             alt="Fotografía de un adulto con jovenes charlando"
             className="img-frame w-full h-full min-h-[50vh] lg:min-h-[85vh] object-cover rounded-[28px]"
           />
@@ -64,7 +63,7 @@ export default function LandingSection({ programs }) {
       >
         <div className="lg:col-span-6 mt-8 lg:mt-0 lg:min-h-[85vh] flex items-stretch">
           <img
-            src="/counseling.jpg"
+            src="/landing-image2.jpg"
             alt="Fotografía de jovenes en terapia"
             className="img-frame w-full h-full max-h-[75vh] md:max-h-[80vh] lg:max-h-[85vh] object-cover rounded-[28px]"
           />
@@ -102,25 +101,22 @@ export default function LandingSection({ programs }) {
           </p>
           <ul className="dot-list mb-6 grid grid-cols-1 gap-y-2 pt-2 text-left sm:grid-cols-2 sm:gap-x-6">
             <li className="text-lg text-slate-600">
-              Ansiedad, estrés o desregulación emocional.
+              Consumo problemático de alcohol y otras drogas.
             </li>
             <li className="text-lg text-slate-600">
-              Ánimo bajo, aislamiento o desmotivación.
+              Uso problemático de pantallas, redes sociales y videojuegos.
             </li>
-            <li className="text-lg text-slate-600">Conflictos familiares.</li>
-            <li className="text-lg text-slate-600">Dificultades escolares.</li>
-            <li className="text-lg text-slate-600">Problemas conductuales.</li>
+            <li className="text-lg text-slate-600">Trastornos de la conducta alimentaria.</li>
+            <li className="text-lg text-slate-600">Conflictos familiares y dificultades en la convivencia.</li>
+            <li className="text-lg text-slate-600">Ánimo bajo, aislamiento social y desmotivación.</li>
             <li className="text-lg text-slate-600">
-              Baja adherencia a tratamientos.
-            </li>
-            <li className="text-lg text-slate-600">
-              Consumo problemático de alcohol, marihuana u otras drogas.
+              Crisis emocionales y situaciones de riesgo biopsicosocial.
             </li>
             <li className="text-lg text-slate-600">
-              Crisis emocionales o riesgo psicosocial.
+              Acoso escolar o bullying.
             </li>
             <li className="text-lg text-slate-600">
-              Familias que necesitan orientación para saber cómo actuar.
+              Familias que necesitan orientación y herramientas para saber cómo actuar
             </li>
           </ul>
 

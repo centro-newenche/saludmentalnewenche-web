@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 
 import authRoutes from "./routes/authRoutes.js";
 import articleRoutes from "./routes/articleRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
 import { notFoundHandler, errorHandler } from "./middlewares/errorHandler.js";
 
 dotenv.config();
@@ -27,6 +28,7 @@ app.get("/api/health", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/articles", articleRoutes);
+app.use("/api/contact", contactRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

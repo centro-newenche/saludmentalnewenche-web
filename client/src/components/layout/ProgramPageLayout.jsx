@@ -26,6 +26,19 @@ export function ImagePlaceholder({ caption, className = "" }) {
   );
 }
 
+function ProgramMedia({ image, caption, className = "" }) {
+  if (image?.src) {
+    return (
+      <img
+        src={image.src}
+        alt={image.alt || ""}
+        className={`img-frame w-full h-full object-cover rounded-[28px] ${className}`}
+      />
+    );
+  }
+  return <ImagePlaceholder caption={caption} className={className} />;
+}
+
 export function ProgramBreadcrumb({ label = "Volver a programas" }) {
   return (
     <Link
@@ -53,6 +66,7 @@ export function ProgramHero({
   title,
   intro = [],
   icon,
+  image,
   imageCaption,
 }) {
   return (
@@ -86,7 +100,8 @@ export function ProgramHero({
         ))}
       </div>
       <div className="lg:col-span-6 mt-2 lg:mt-0 flex items-stretch">
-        <ImagePlaceholder
+        <ProgramMedia
+          image={image}
           caption={imageCaption}
           className="min-h-[40vh] lg:min-h-[65vh]"
         />
@@ -95,9 +110,12 @@ export function ProgramHero({
   );
 }
 
+
+
 export function ProgramSection({
   title,
   children,
+  image,
   imageCaption,
   imagePosition = "right",
 }) {
@@ -114,16 +132,17 @@ export function ProgramSection({
       {children}
     </div>
   );
-
+ 
   const imageCol = (
     <div className="lg:col-span-5 mt-2 lg:mt-0 flex items-stretch">
-      <ImagePlaceholder
+      <ProgramMedia
+        image={image}
         caption={imageCaption}
         className="min-h-[40vh] lg:min-h-full"
       />
     </div>
   );
-
+ 
   return (
     <section
       data-reveal
@@ -143,6 +162,7 @@ export function ProgramSection({
     </section>
   );
 }
+
 
 export function ProgramListSection({ title, items = [], columns = 2 }) {
   return (

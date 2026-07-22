@@ -42,9 +42,12 @@ export default function TeenCarePage() {
 
       <ProgramHero
         eyebrow="Programas · Atención Adolescente"
-        title="Atención especializada para adolescentes de 12 a 18 años"
+        title="Atención especializada para adolescentes de 12 a 19 años"
         icon={<FaUserFriends />}
-        imageCaption=""
+        image={{
+          src: "/teenCare1.jpg",
+          alt: "",
+        }}
         intro={[
           "En Newenche acompañamos a adolescentes que están atravesando dificultades emocionales, familiares, escolares, conductuales o vinculadas al consumo de alcohol y otras drogas.",
           "Sabemos que muchas veces pedir ayuda no es fácil. Algunos adolescentes no quieren hablar, se aíslan, se enojan, abandonan tratamientos, bajan su rendimiento escolar o expresan su malestar a través de conductas que preocupan a la familia.",
@@ -52,7 +55,11 @@ export default function TeenCarePage() {
         ]}
       />
 
-      <ProgramSection imageCaption="">
+      <ProgramSection 
+        image={{
+          src: "/teenCare2.jpg",
+          alt: "",
+        }}>
         <ProgramListSection
           title="Motivos frecuentes de consulta"
           items={motivos}
@@ -65,7 +72,7 @@ export default function TeenCarePage() {
 
       <ProgramClosing
         title="Cada adolescente necesita ser comprendido en su contexto"
-        text="Por eso, en Newenche no trabajamos solo con síntomas: trabajamos con historias, vínculos, rutinas, conflictos y posibilidades de cambio."
+        text="Por eso, en Newenche no trabajamos solo abordando los síntomas: trabajamos con historias, vínculos, rutinas, conflictos y posibilidades de cambio."
         ctaLabel="Solicitar orientación inicial"
       />
 

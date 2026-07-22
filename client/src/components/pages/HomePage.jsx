@@ -5,8 +5,10 @@ import { programs } from "../../data/landingData";
 export default function HomePage() {
   return (
     <>
-      <LandingSection programs={programs} />
-      <ContactForm />
+      <div className="newenche">
+        <LandingSection programs={programs} />
+        <ContactForm />
+      </div>
     </>
   );
 }

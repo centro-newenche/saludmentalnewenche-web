@@ -122,13 +122,13 @@ export default function AboutPage() {
             </span>
           </h1>
           <p className="text-body mb-4 ml-1 max-w-xl text-lg text-justify">
-            Newenche Adolescencia nace desde una convicción profunda: ningún
+            Newenche nace desde una convicción profunda: ningún
             adolescente puede ser comprendido fuera de su historia, su familia,
-            su colegio, su barrio y sus vínculos.
+            su colegio y su contexto.
           </p>
           <p className="text-body ml-1 max-w-xl text-lg text-justify">
             La adolescencia es una etapa decisiva. No es solo una edad de riesgo
-            o conflicto: es un periodo donde se construyen identidad, autonomía,
+            o conflicto: es un periodo donde se construye la identidad, autonomía,
             pertenencia, autoestima, proyectos de vida y formas de relacionarse
             con el mundo.
           </p>
@@ -153,22 +153,19 @@ export default function AboutPage() {
             className="w-full h-full min-h-[40vh] lg:min-h-[70vh] object-cover rounded-2xl"
           />
         </div>
-        <div className="card-soft p-6 sm:p-10 lg:col-span-7 max-w-3xl mx-auto rounded-[32px] text-center flex flex-col justify-center">
+        <div
+          className="relative overflow-hidden p-6 sm:p-10 lg:col-span-7 max-w-3xl mx-auto rounded-[32px] text-center flex flex-col justify-center"
+          style={{
+            background:
+              "linear-gradient(155deg, var(--pine-dark) 0%, var(--pine) 60%, var(--pine-light) 100%)",
+          }}
+        >
           <h2
-            className="font-display mb-5 text-xl font-semibold md:text-2xl"
-            style={{ color: "var(--pine)" }}
+            className="pull-quote relative z-10 text-xl md:text-3xl"
+            style={{ color: "var(--sand)" }}
           >
-            No es un problema que corregir
+            Abordamos la adolescencia de manera integral, desde una mirada salutogénica, fortalecedora, participativa y empoderante.
           </h2>
-          <p className="pull-quote mb-6 ml-2 mr-2 text-xl text-slate-700 md:text-2xl">
-            "Lo comprendemos como una persona en desarrollo, atravesada por
-            cambios emocionales, familiares, sociales y culturales."
-          </p>
-          <p className="text-body ml-2 mr-2 text-lg text-justify">
-            Nuestro trabajo busca escuchar, comprender y acompañar. Integramos
-            salud mental, intervención familiar, psicoeducación, trabajo
-            comunitario, acompañamiento en terreno y coordinación con redes.
-          </p>
         </div>
       </section>
 
@@ -285,7 +282,7 @@ export default function AboutPage() {
             className="font-display mb-4 text-xl font-semibold md:text-2xl"
             style={{ color: "var(--pine)" }}
           >
-            Atención especializada para adolescentes de 12 a 18 años
+            Atención especializada para adolescentes de 12 a 19 años
           </h2>
           <p className="text-body mb-4 text-lg text-justify">
             Sabemos que muchas veces pedir ayuda no es fácil. Algunos

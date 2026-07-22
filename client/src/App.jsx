@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import BackToTopButton from "./components/common/BackToTopButton";
+import WhatsAppButton from "./components/common/WhatsAppButton";
 import SiteFooter from "./components/layout/SiteFooter";
 import SiteHeader from "./components/layout/SiteHeader";
 import HomePage from "./components/pages/HomePage";
@@ -91,6 +92,7 @@ function App() {
             <SiteFooter />
           </div>
           <BackToTopButton show={showTopButton} />
+          <WhatsAppButton />
         </div>
       )}
     </AdminAuthProvider>

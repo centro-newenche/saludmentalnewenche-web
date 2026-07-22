@@ -33,17 +33,23 @@ export default function RehabPage() {
         eyebrow="Programas · Rehabilitación de Drogas y Alcohol"
         title="Acompañamiento especializado en consumo de alcohol, marihuana y otras drogas"
         icon={<FaLeaf />}
-        imageCaption=""
+        image={{
+          src: "/rehab1.jpg",
+          alt: "",
+        }}
         intro={[
           "El consumo adolescente no siempre es solo una conducta aislada. Muchas veces puede relacionarse con sufrimiento emocional, presión de pares, conflictos familiares, búsqueda de pertenencia, evasión, falta de sentido, dificultades escolares o problemas para regular lo que se vive internamente.",
-          "En Newenche ofrecemos un acompañamiento ambulatorio especializado para adolescentes de 12 a 18 años que presentan consumo problemático de alcohol, marihuana u otras drogas, integrando apoyo individual, orientación familiar, psicoeducación, prevención de recaídas y coordinación con redes cuando corresponde.",
+          "En Newenche ofrecemos un acompañamiento ambulatorio especializado para adolescentes de 12 a 19 años que presentan consumo problemático de alcohol, marihuana u otras drogas, integrando apoyo individual, orientación familiar, psicoeducación, prevención de recaídas y coordinación con redes cuando corresponde.",
         ]}
       />
 
       <ProgramSection
         title="¿Qué incluye el programa?"
         imagePosition="left"
-        imageCaption=""
+        image={{
+          src: "/rehab4.jpg",
+          alt: "",
+        }}
       >
         <ProgramListSection items={incluye} />
       </ProgramSection>
@@ -54,7 +60,7 @@ export default function RehabPage() {
       />
 
       <ProgramClosing
-        title="Un proceso de acompañamiento, no de sanción"
+        title="Un proceso integral de acompañamiento"
         text="Cada plan se construye a la medida del adolescente y su familia, con seguimiento continuo y coordinación con redes de apoyo cuando es necesario."
         ctaLabel="Solicitar evaluación inicial"
       />

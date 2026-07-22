@@ -31,7 +31,10 @@ export default function SchoolsAndNetworksPage() {
         eyebrow="Programas · Colegios y Redes"
         title="Coordinación con colegios, equipos psicosociales e instituciones"
         icon={<FaSchool />}
-        imageCaption=""
+        image={{
+          src: "/schools1.jpg",
+          alt: "",
+        }}
         intro={[
           "La salud mental adolescente requiere respuestas compartidas. Muchas veces, las dificultades emocionales, conductuales o familiares también se expresan en el espacio escolar y comunitario.",
           "Por eso, cuando la situación lo requiere y con autorización de la familia, Newenche puede coordinar acciones con colegios, equipos psicosociales, municipios, programas sociales, redes de salud u otras instituciones relevantes.",
@@ -41,7 +44,10 @@ export default function SchoolsAndNetworksPage() {
       <ProgramSection
         title="Servicios para colegios e instituciones"
         imagePosition="left"
-        imageCaption=""
+        image={{
+          src: "/schools2.jpg",
+          alt: "",
+        }}
       >
         <ProgramListSection items={servicios} />
       </ProgramSection>

@@ -1,26 +1,30 @@
-import { useRef, useState } from "react";
 import Turnstile, { TESTING_SITE_KEY } from "../common/Turnstile";
+import { useContactForm } from "../../hooks/useContactForm";
 
 const TURNSTILE_SITE_KEY =
   import.meta.env.VITE_TURNSTILE_SITE_KEY || TESTING_SITE_KEY;
 
+const INITIAL_VALUES = {
+  name: "",
+  phone: "",
+  email: "",
+  subject: "",
+  message: "",
+};
+
 export default function ContactForm() {
-  const turnstileRef = useRef(null);
-  const [turnstileToken, setTurnstileToken] = useState(null);
-  const [status, setStatus] = useState(null);
+  const {
+    turnstileRef,
+    values,
+    fieldErrors,
+    status,
+    setTurnstileToken,
+    setStatus,
+    handleChange,
+    handleSubmit,
+  } = useContactForm("general", INITIAL_VALUES);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    if (!turnstileToken) {
-      setStatus("missing-captcha");
-      return;
-    }
-
-    setStatus("success");
-    turnstileRef.current?.reset();
-    setTurnstileToken(null);
-  }
+  const isSubmitting = status === "submitting";
 
   return (
     <section
@@ -75,10 +79,18 @@ export default function ContactForm() {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   required
+                  value={values.name}
+                  onChange={handleChange}
                   placeholder="Tu nombre"
                   className="field-input w-full rounded-lg px-4 py-2.5 text-sm transition"
                 />
+                {fieldErrors.name && (
+                  <p className="mt-1 text-xs" style={{ color: "var(--clay)" }}>
+                    {fieldErrors.name}
+                  </p>
+                )}
               </div>
               <div>
                 <label className="field-label mb-1 block text-sm font-medium">
@@ -86,10 +98,18 @@ export default function ContactForm() {
                 </label>
                 <input
                   type="tel"
+                  name="phone"
                   required
+                  value={values.phone}
+                  onChange={handleChange}
                   placeholder="+56 9 0000 0000"
                   className="field-input w-full rounded-lg px-4 py-2.5 text-sm transition"
                 />
+                {fieldErrors.phone && (
+                  <p className="mt-1 text-xs" style={{ color: "var(--clay)" }}>
+                    {fieldErrors.phone}
+                  </p>
+                )}
               </div>
             </div>
             <div>
@@ -98,10 +118,18 @@ export default function ContactForm() {
               </label>
               <input
                 type="email"
+                name="email"
                 required
+                value={values.email}
+                onChange={handleChange}
                 placeholder="tu@correo.com"
                 className="field-input w-full rounded-lg px-4 py-2.5 text-sm transition"
               />
+              {fieldErrors.email && (
+                <p className="mt-1 text-xs" style={{ color: "var(--clay)" }}>
+                  {fieldErrors.email}
+                </p>
+              )}
             </div>
             <div>
               <label className="field-label mb-1 block text-sm font-medium">
@@ -109,21 +137,37 @@ export default function ContactForm() {
               </label>
               <input
                 type="text"
+                name="subject"
                 required
+                value={values.subject}
+                onChange={handleChange}
                 placeholder="¿En qué podemos ayudarte?"
                 className="field-input w-full rounded-lg px-4 py-2.5 text-sm transition"
               />
+              {fieldErrors.subject && (
+                <p className="mt-1 text-xs" style={{ color: "var(--clay)" }}>
+                  {fieldErrors.subject}
+                </p>
+              )}
             </div>
             <div>
               <label className="field-label mb-1 block text-sm font-medium">
                 Mensaje
               </label>
               <textarea
+                name="message"
                 rows={4}
                 required
+                value={values.message}
+                onChange={handleChange}
                 placeholder="Escribe tu mensaje aquí..."
                 className="field-input w-full resize-none rounded-lg px-4 py-2.5 text-sm transition"
               />
+              {fieldErrors.message && (
+                <p className="mt-1 text-xs" style={{ color: "var(--clay)" }}>
+                  {fieldErrors.message}
+                </p>
+              )}
             </div>
 
             <div>
@@ -132,7 +176,7 @@ export default function ContactForm() {
                 siteKey={TURNSTILE_SITE_KEY}
                 onVerify={(token) => {
                   setTurnstileToken(token);
-                  if (status === "missing-captcha") setStatus(null);
+                  if (status === "missing-captcha") setStatus("idle");
                 }}
                 onExpire={() => setTurnstileToken(null)}
                 onError={() => setTurnstileToken(null)}
@@ -153,12 +197,19 @@ export default function ContactForm() {
               </p>
             )}
 
+            {status === "error" && (
+              <p className="text-sm font-medium" style={{ color: "var(--clay)" }}>
+                Ocurrió un problema al enviar tu mensaje. Por favor intenta
+                nuevamente en unos minutos.
+              </p>
+            )}
+
             <button
               type="submit"
-              disabled={!turnstileToken}
+              disabled={isSubmitting}
               className="btn-primary w-full rounded-lg px-6 py-3 font-semibold transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0"
             >
-              Enviar mensaje
+              {isSubmitting ? "Enviando..." : "Enviar mensaje"}
             </button>
           </form>
         </div>

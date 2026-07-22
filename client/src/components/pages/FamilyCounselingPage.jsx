@@ -31,8 +31,12 @@ export default function FamilyCounselingPage() {
         eyebrow="Programas · Orientación Familiar y Psicoeducación"
         title="Apoyo para madres, padres y cuidadores"
         icon={<FaHome />}
-        imageCaption=""
+        image={{
+          src: "/familyCounseling1.jpg",
+          alt: "",
+        }}
         intro={[
+          "La salud mental adolescente también se construye en familia: con orientación, comprensión y herramientas para acompañar mejor.",
           "Acompañar a un adolescente en crisis puede ser difícil. Muchas familias llegan a pedir ayuda cuando ya se sienten cansadas, confundidas, sobrepasadas o sin saber cómo actuar.",
           "En Newenche ofrecemos espacios de orientación familiar y psicoeducación para entregar herramientas concretas a madres, padres y cuidadores.",
         ]}
@@ -41,7 +45,10 @@ export default function FamilyCounselingPage() {
       <ProgramSection
         title="¿Qué trabajamos?"
         imagePosition="left"
-        imageCaption=""
+        image={{
+          src: "/familyCounseling2.jpeg",
+          alt: "",
+        }}
       >
         <ProgramListSection items={temas} />
       </ProgramSection>

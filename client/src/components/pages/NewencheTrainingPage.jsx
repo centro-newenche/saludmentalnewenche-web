@@ -54,7 +54,10 @@ export default function NewencheTrainingPage() {
         eyebrow="Programas · Capacitaciones Newenche"
         title="Formación aplicada en salud mental adolescente, familia y comunidad"
         icon={<FaChalkboardTeacher />}
-        imageCaption=""
+        image={{
+          src: "/Capacitaciones.webp",
+          alt: "",
+        }}
         intro={[
           "Newenche desarrolla capacitaciones para colegios, municipios, equipos psicosociales, instituciones educativas, programas sociales y organizaciones comunitarias que trabajan con adolescentes y familias.",
           "Nuestras capacitaciones buscan entregar herramientas prácticas, claras y contextualizadas para comprender mejor el malestar adolescente, responder ante crisis, acompañar a las familias y fortalecer el trabajo en red.",
