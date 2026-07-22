@@ -13,7 +13,12 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const allowedOrigins = ["http://localhost:5173", process.env.CLIENT_URL];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://centronewenche.cl",
+  "https://www.centronewenche.cl",
+  process.env.CLIENT_URL,
+];
 
 app.use(
   cors({
