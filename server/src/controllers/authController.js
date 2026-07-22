@@ -15,8 +15,8 @@ function signToken(admin) {
 function setAuthCookie(res, token) {
   res.cookie("token", token, {
     httpOnly: true,
-    secure: isProduction,
-    sameSite: isProduction ? "strict" : "lax",
+    secure: true,
+    sameSite: "none",
     maxAge: 8 * 60 * 60 * 1000,
   });
 }
