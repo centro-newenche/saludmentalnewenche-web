@@ -23,7 +23,7 @@ export async function sendContactEmail({ subject, html, replyTo }) {
 
   await mailer.sendMail({
     from: process.env.MAIL_FROM || '"Newenche Web" <no-reply@centronewenche.cl>',
-    to: process.env.CONTACT_EMAIL_TO || "saludmentalnewenche@gmail.com",
+    to: process.env.CONTACT_EMAIL_TO || "contacto@centronewenche.cl",
     replyTo,
     subject,
     html,

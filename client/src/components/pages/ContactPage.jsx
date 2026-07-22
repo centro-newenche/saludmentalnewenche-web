@@ -139,13 +139,13 @@ export default function ContactPage() {
               <span className="icon-chip mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full">
                 <FaWhatsapp />
               </span>
-              <span className="text-body pt-1.5">+56 9 1234 5678</span>
+              <span className="text-body pt-1.5">+56 9 7805 9311</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="icon-chip mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full">
                 <FaEnvelope />
               </span>
-              <span className="text-body pt-1.5">contacto@newenche.cl</span>
+              <span className="text-body pt-1.5">contacto@centronewenche.cl</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="icon-chip mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full">

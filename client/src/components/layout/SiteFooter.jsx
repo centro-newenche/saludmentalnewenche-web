@@ -13,18 +13,18 @@ export default function SiteFooter() {
         <div className="flex flex-col items-center gap- sm:items-start">
           <div className="flex items-center justify-center gap-5">
             <a
-              href="mailto:hello@example.com"
+              href="mailto:contacto@centronewenche.cl"
               className="inline-flex items-center gap-2 hover:text-blue-300"
             >
               <FaEnvelope />
-              correo@correo.com
+              contacto@centronewenche.cl
             </a>
             <a
               href="tel:+5691234567"
               className="inline-flex items-center gap-2 hover:text-blue-300"
             >
               <FaPhone />
-              +5691234567
+              +56 9 7805 9311
             </a>
           </div>
           <div className="flex items-center justify-center gap-5">
@@ -52,7 +52,7 @@ export default function SiteFooter() {
         </div>
         <p className="text-center sm:text-right">
           {" "}
-          2026 Salud Mental Newenche, © Todos los derechos reservados.
+          © 2026 Salud Mental Newenche, Todos los derechos reservados.
         </p>
       </div>
     </footer>

@@ -104,9 +104,9 @@ export default function SiteHeader({
             <Link to="/contacto" className="nav-link" onClick={scrollToTop}>
               Contacto
             </Link>
-            <Link to="/faq" className="nav-link" onClick={scrollToTop}>
+            {/* <Link to="/faq" className="nav-link" onClick={scrollToTop}>
               FAQ
-            </Link>
+            </Link> */}
           </nav>
 
           <button
@@ -194,9 +194,9 @@ export default function SiteHeader({
             >
               Contacto
             </Link>
-            <Link to="/faq" onClick={handleMobileNavClick} className="nav-link">
+            {/* <Link to="/faq" onClick={handleMobileNavClick} className="nav-link">
               FAQ
-            </Link>
+            </Link> */}
 
             {admin && (
               <Link
