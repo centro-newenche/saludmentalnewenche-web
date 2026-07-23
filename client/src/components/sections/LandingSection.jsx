@@ -14,26 +14,26 @@ export default function LandingSection({ programs }) {
         data-reveal
         className="reveal-up card-soft grid gap-8 rounded-[32px] lg:grid-cols-12 lg:gap-8 lg:items-stretch lg:min-h-[85vh]"
       >
-        <div className="p-6 lg:col-span-5 flex flex-col justify-center">
+        <div className="p-6 lg:col-span-5 flex flex-col items-center lg:items-start justify-center text-center lg:text-left">
           <img
             src="/logo-newenche.png"
             alt="Logo Salud Mental Newenche"
-            className="mb-8 ml-10 w-full max-w-md object-contain"
+            className="mb-8 w-full max-w-[220px] sm:max-w-xs lg:max-w-md lg:ml-10 object-contain"
           />
 
-          <p className="text-body mb-6 ml-7 max-w-xl text-lg">
+          <p className="text-body mb-6 max-w-xl text-base sm:text-lg lg:ml-7">
             Acompañamos la adolescencia en los lugares donde se construyen sus
             vínculos, sus conflictos y sus posibilidades de cambio.
           </p>
 
           <p
-            className="pull-quote mb-8 ml-7 max-w-xl text-2xl"
+            className="pull-quote mb-8 max-w-xl text-xl sm:text-2xl lg:ml-7"
             style={{ color: "var(--pine)" }}
           >
             Construimos procesos terapéuticos que favorecen la recuperación, mediante un acompañamiento especializado en la adolescencia, cercano y humano
           </p>
 
-          <div className="flex flex-wrap gap-4 ml-7 justify-center lg:justify-start">
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start lg:ml-7">
             <Link
               to="/contacto"
               className="btn-primary rounded-lg px-6 py-3 font-semibold transition hover:-translate-y-0.5"

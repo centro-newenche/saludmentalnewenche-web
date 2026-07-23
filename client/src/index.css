@@ -224,8 +224,6 @@ a,
   z-index: 0;
 }
 
-/* Contenido Markdown de los recursos/artículos, usando la paleta newenche
-   en vez de los colores por defecto del plugin de tipografía. */
 .newenche .prose {
   --tw-prose-body: var(--ink);
   --tw-prose-headings: var(--pine);
@@ -249,4 +247,8 @@ a,
   width: 100%;
   aspect-ratio: 16 / 9;
   height: auto;
+}
+
+.newenche iframe {
+  max-width: 100%;
 }

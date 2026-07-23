@@ -54,7 +54,7 @@ function App() {
         <div className="relative min-h-screen overflow-hidden bg-[#e2f3d9] text-emerald-900">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top, rgba(255,255,255,0.08),transparent_45%)]" />
 
-          <div className="mx-auto w-[90%] px-6 py-24 lg:px-8">
+          <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 py-12 sm:py-16 lg:w-[90%] lg:px-8 lg:py-24">
             <SiteHeader
               isScrolled={isScrolled}
               menuOpen={menuOpen}

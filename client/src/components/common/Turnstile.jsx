@@ -1,10 +1,20 @@
-import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
+import {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 
 const SCRIPT_ID = "cf-turnstile-script";
 const SCRIPT_SRC =
   "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
 
 const TESTING_SITE_KEY = "1x00000000000000000000AA";
+
+const NORMAL_WIDTH = 300;
+const NORMAL_HEIGHT = 65;
 
 let scriptLoadPromise = null;
 
@@ -45,8 +55,30 @@ const Turnstile = forwardRef(function Turnstile(
   },
   ref,
 ) {
+  const wrapperRef = useRef(null);
   const containerRef = useRef(null);
   const widgetIdRef = useRef(null);
+  const [scale, setScale] = useState(1);
+
+  // Watch the available width and shrink the widget to fit when the
+  // container is narrower than its native 300px, never growing past 1.
+  useLayoutEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper || typeof ResizeObserver === "undefined") return;
+
+    const updateScale = (width) => {
+      if (!width) return;
+      setScale(Math.min(1, width / NORMAL_WIDTH));
+    };
+
+    updateScale(wrapper.getBoundingClientRect().width);
+
+    const observer = new ResizeObserver(([entry]) => {
+      updateScale(entry.contentRect.width);
+    });
+    observer.observe(wrapper);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -89,7 +121,22 @@ const Turnstile = forwardRef(function Turnstile(
     },
   }));
 
-  return <div ref={containerRef} className={className} />;
+  return (
+    <div
+      ref={wrapperRef}
+      className={className}
+      style={{ width: "100%", height: NORMAL_HEIGHT * scale }}
+    >
+      <div
+        ref={containerRef}
+        style={{
+          width: NORMAL_WIDTH,
+          transform: `scale(${scale})`,
+          transformOrigin: "top left",
+        }}
+      />
+    </div>
+  );
 });
 
 export default Turnstile;

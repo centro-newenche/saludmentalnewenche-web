@@ -30,10 +30,10 @@ export default function ContactForm() {
     <section
       id="contact"
       data-reveal
-      className="newenche reveal-up mt-24 rounded-[32px] card-soft p-8 md:p-10"
+      className="newenche reveal-up mt-16 sm:mt-24 rounded-[32px] card-soft p-6 sm:p-8 md:p-10 overflow-hidden"
     >
-      <div className="grid gap-10 md:grid-cols-2 md:items-start">
-        <div>
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
+        <div className="min-w-0">
           <p className="eyebrow mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em]">
             <span className="eyebrow-tick" aria-hidden="true" />
             Hablemos
@@ -70,7 +70,7 @@ export default function ContactForm() {
           </ul>
         </div>
 
-        <div className="card-soft rounded-[24px] p-6">
+        <div className="card-soft min-w-0 rounded-[24px] p-6">
           <form className="space-y-4" onSubmit={handleSubmit} noValidate>
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
