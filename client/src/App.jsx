@@ -25,6 +25,7 @@ import { useAutoRotate } from "./hooks/useAutoRotate";
 import { useRevealOnScroll } from "./hooks/useRevealOnScroll";
 import { useScrollState } from "./hooks/useScrollState";
 import { useScrollToTop } from "./hooks/useScrollToTop";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [menuOpen, setMenuOPen] = useState(false);
@@ -95,6 +96,7 @@ function App() {
           <WhatsAppButton />
         </div>
       )}
+      <Analytics />
     </AdminAuthProvider>
   );
 }
