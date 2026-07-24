@@ -24,7 +24,7 @@ export default function SiteFooter() {
               className="inline-flex items-center gap-2 whitespace-nowrap hover:text-blue-300"
             >
               <FaPhone />
-              +56 9 1234 5678
+              +56 9 7805 9311
             </a>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
