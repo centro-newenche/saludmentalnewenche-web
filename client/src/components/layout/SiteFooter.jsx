@@ -10,8 +10,8 @@ export default function SiteFooter() {
   return (
     <footer className="mt-20 border-t border-zinc-800 py-8 text-sm text-zinc-400">
       <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-        <div className="flex flex-col items-center gap- sm:items-start">
-          <div className="flex items-center justify-center gap-5">
+        <div className="flex flex-col items-center gap-4 sm:items-start">
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-5">
             <a
               href="mailto:contacto@centronewenche.cl"
               className="inline-flex items-center gap-2 hover:text-blue-300"
@@ -21,13 +21,13 @@ export default function SiteFooter() {
             </a>
             <a
               href="tel:+5691234567"
-              className="inline-flex items-center gap-2 hover:text-blue-300"
+              className="inline-flex items-center gap-2 whitespace-nowrap hover:text-blue-300"
             >
               <FaPhone />
-              +56 9 7805 9311
+              +56 9 1234 5678
             </a>
           </div>
-          <div className="flex items-center justify-center gap-5">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
             <a
               href="#"
               className="inline-flex items-center gap-2 hover:text-blue-300"

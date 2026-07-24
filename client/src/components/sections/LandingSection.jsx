@@ -21,13 +21,13 @@ export default function LandingSection({ programs }) {
             className="mb-8 w-full max-w-[220px] sm:max-w-xs lg:max-w-md lg:ml-10 object-contain"
           />
 
-          <p className="text-body mb-6 max-w-xl text-base sm:text-lg lg:ml-7">
+          <p className="text-body mb-6 max-w-xl text-base text-justify sm:text-lg lg:ml-7">
             Acompañamos la adolescencia en los lugares donde se construyen sus
             vínculos, sus conflictos y sus posibilidades de cambio.
           </p>
 
           <p
-            className="pull-quote mb-8 max-w-xl text-xl sm:text-2xl lg:ml-7"
+            className="pull-quote mb-8 max-w-xl text-xl text-justify sm:text-2xl lg:ml-7"
             style={{ color: "var(--pine)" }}
           >
             Construimos procesos terapéuticos que favorecen la recuperación, mediante un acompañamiento especializado en la adolescencia, cercano y humano

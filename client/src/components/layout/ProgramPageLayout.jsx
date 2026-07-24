@@ -72,23 +72,23 @@ export function ProgramHero({
   return (
     <section
       data-reveal
-      className="reveal-up card-soft grid gap-8 rounded-[32px] lg:grid-cols-12 lg:gap-8 lg:items-stretch lg:min-h-[65vh]"
+      className="reveal-up card-soft grid grid-cols-1 gap-8 rounded-[32px] lg:grid-cols-12 lg:gap-8 lg:items-stretch lg:min-h-[65vh]"
     >
-      <div className="relative p-6 lg:col-span-6 flex flex-col justify-center">
+      <div className="relative min-w-0 p-6 lg:col-span-6 flex flex-col justify-center">
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1
-          className="font-display relative mb-6 ml-1 flex items-start gap-4 max-w-xl text-3xl font-semibold leading-[1.15] md:text-[2.4rem]"
+          className="font-display relative mb-6 ml-1 flex min-w-0 items-start gap-2 max-w-xl text-2xl font-semibold leading-[1.15] sm:gap-4 sm:text-3xl md:text-[2.4rem]"
           style={{ color: "var(--pine)" }}
         >
           {icon && (
             <span
-              className="icon-chip mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-xl"
+              className="icon-chip mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-base sm:h-12 sm:w-12 sm:text-xl"
               aria-hidden="true"
             >
               {icon}
             </span>
           )}
-          <span>{title}</span>
+          <span className="min-w-0">{title}</span>
         </h1>
         {intro.map((paragraph, i) => (
           <p
@@ -99,7 +99,7 @@ export function ProgramHero({
           </p>
         ))}
       </div>
-      <div className="lg:col-span-6 mt-2 lg:mt-0 flex items-stretch">
+      <div className="lg:col-span-6 mt-2 lg:mt-0 flex items-stretch min-w-0">
         <ProgramMedia
           image={image}
           caption={imageCaption}
@@ -110,8 +110,6 @@ export function ProgramHero({
   );
 }
 
-
-
 export function ProgramSection({
   title,
   children,
@@ -120,7 +118,7 @@ export function ProgramSection({
   imagePosition = "right",
 }) {
   const textCol = (
-    <div className="card-soft p-6 sm:p-10 lg:col-span-7 rounded-[32px]">
+    <div className="card-soft min-w-0 p-6 sm:p-10 lg:col-span-7 rounded-[32px]">
       {title && (
         <h2
           className="font-display mb-6 text-xl font-semibold md:text-2xl"
@@ -132,9 +130,9 @@ export function ProgramSection({
       {children}
     </div>
   );
- 
+
   const imageCol = (
-    <div className="lg:col-span-5 mt-2 lg:mt-0 flex items-stretch">
+    <div className="lg:col-span-5 mt-2 lg:mt-0 flex items-stretch min-w-0">
       <ProgramMedia
         image={image}
         caption={imageCaption}
@@ -142,11 +140,11 @@ export function ProgramSection({
       />
     </div>
   );
- 
+
   return (
     <section
       data-reveal
-      className="reveal-up grid gap-8 lg:grid-cols-12 lg:gap-8 lg:items-stretch"
+      className="reveal-up grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-8 lg:items-stretch"
     >
       {imagePosition === "left" ? (
         <>
@@ -162,7 +160,6 @@ export function ProgramSection({
     </section>
   );
 }
-
 
 export function ProgramListSection({ title, items = [], columns = 2 }) {
   return (
@@ -296,7 +293,7 @@ export function ProgramTopicList({ title, intro, topics = [] }) {
       {intro && (
         <p className="text-body mb-8 max-w-2xl text-lg text-justify">{intro}</p>
       )}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {topics.map((topic) => (
           <div
             key={topic.title}
