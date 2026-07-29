@@ -1,7 +1,7 @@
 import {
   FaBars,
   FaChevronDown,
-  FaEnvelope,
+  FaCalendarAlt,
   FaUserShield,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -120,10 +120,10 @@ export default function SiteHeader({
           </button>
 
           <Link
-            to="/contacto"
+            to="https://agendamiento.reservo.cl/makereserva/agenda/L04Qh5Q0K0rTA25i9V83sid3h8n0h8"
             className="btn-primary hidden cursor-pointer rounded-lg px-5 py-2 text-sm font-medium transition lg:inline-flex lg:items-center lg:gap-2"
           >
-            <FaEnvelope />
+            <FaCalendarAlt />
             Agenda tu consulta
           </Link>
 
@@ -210,11 +210,11 @@ export default function SiteHeader({
             )}
 
             <Link
-              to="/contacto"
+              to="https://agendamiento.reservo.cl/makereserva/agenda/L04Qh5Q0K0rTA25i9V83sid3h8n0h8"
               onClick={handleMobileNavClick}
               className="btn-primary mt-2 inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-semibold transition"
             >
-              <FaEnvelope />
+              <FaCalendarAlt />
               Agenda tu consulta
             </Link>
           </div>
