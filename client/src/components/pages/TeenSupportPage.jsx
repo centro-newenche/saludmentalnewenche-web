@@ -1,4 +1,5 @@
 import { FaMapMarkerAlt } from "react-icons/fa";
+import Seo from "../common/Seo";
 import ContactForm from "../sections/ContactForm";
 import {
   ProgramBreadcrumb,
@@ -25,6 +26,12 @@ const acompanamiento = [
 export default function TeenSupportPage() {
   return (
     <div className="newenche space-y-16">
+      <Seo
+        title="Acompañamiento adolescente, familiar y territorial"
+        description="Acompañamiento cercano y flexible para adolescentes y familias en crisis, aislamiento, desmotivación escolar o riesgo psicosocial, conectado con la vida real: casa, colegio y comunidad."
+        path="/programas/acompanamiento"
+      />
+
       <ProgramBreadcrumb />
 
       <ProgramHero
@@ -41,8 +48,8 @@ export default function TeenSupportPage() {
         ]}
       />
 
-      <ProgramSection 
-        title="¿Cómo trabajamos?" 
+      <ProgramSection
+        title="¿Cómo trabajamos?"
         image={{
           src: "/teensupport2.jpg",
           alt: "",

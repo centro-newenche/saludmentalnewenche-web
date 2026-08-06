@@ -1,4 +1,5 @@
 import { FaUserFriends } from "react-icons/fa";
+import Seo from "../common/Seo";
 import ContactForm from "../sections/ContactForm";
 import {
   ProgramBreadcrumb,
@@ -38,6 +39,12 @@ const modalidades = [
 export default function TeenCarePage() {
   return (
     <div className="newenche space-y-16">
+      <Seo
+        title="Atención especializada para adolescentes"
+        description="Acompañamiento terapéutico para adolescentes de 12 a 19 años: ansiedad, consumo de sustancias, crisis emocionales, conflictos familiares y más. Atención individual, familiar y en terreno en Santiago."
+        path="/programas/adolescente"
+      />
+
       <ProgramBreadcrumb />
 
       <ProgramHero
@@ -55,11 +62,12 @@ export default function TeenCarePage() {
         ]}
       />
 
-      <ProgramSection 
+      <ProgramSection
         image={{
           src: "/teenCare2.jpg",
           alt: "",
-        }}>
+        }}
+      >
         <ProgramListSection
           title="Motivos frecuentes de consulta"
           items={motivos}

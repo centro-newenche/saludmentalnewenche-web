@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaFacebook,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function SiteFooter() {
   return (
@@ -28,13 +29,14 @@ export default function SiteFooter() {
             </a>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-            <a
-              href="#"
+            <Link
+              to="https://www.instagram.com/saludmentalnewenche/"
               className="inline-flex items-center gap-2 hover:text-blue-300"
             >
               <FaInstagram />
               Instagram
-            </a>
+            </Link>
+
             <a
               href="#"
               className="inline-flex items-center gap-2 hover:text-blue-300"

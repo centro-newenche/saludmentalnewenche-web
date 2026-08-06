@@ -1,4 +1,5 @@
 import { FaLeaf } from "react-icons/fa";
+import Seo from "../common/Seo";
 import ContactForm from "../sections/ContactForm";
 import {
   ProgramBreadcrumb,
@@ -27,6 +28,12 @@ const incluye = [
 export default function RehabPage() {
   return (
     <div className="newenche space-y-16">
+      <Seo
+        title="Rehabilitación de alcohol y drogas para adolescentes"
+        description="Acompañamiento ambulatorio especializado para adolescentes de 12 a 19 años con consumo problemático de alcohol, marihuana u otras drogas. Apoyo individual, familiar y prevención de recaídas en Santiago."
+        path="/programas/rehabilitacion"
+      />
+
       <ProgramBreadcrumb />
 
       <ProgramHero

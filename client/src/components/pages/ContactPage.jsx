@@ -1,4 +1,5 @@
 import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import Seo from "../common/Seo";
 import Turnstile, { TESTING_SITE_KEY } from "../common/Turnstile";
 import { useContactForm } from "../../hooks/useContactForm";
 
@@ -63,6 +64,12 @@ export default function ContactPage() {
 
   return (
     <main className="newenche space-y-16 pb-24 pt-28">
+      <Seo
+        title="Contacto"
+        description="Solicita tu orientación inicial en Centro Newenche. Escríbenos si un adolescente de tu familia está atravesando dificultades emocionales, familiares, escolares o de consumo."
+        path="/contacto"
+      />
+
       <section
         data-reveal
         className="reveal-up card-soft mx-auto max-w-4xl rounded-[32px] p-8 text-center md:p-14"

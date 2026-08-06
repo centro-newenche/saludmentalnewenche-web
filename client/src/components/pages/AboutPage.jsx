@@ -9,6 +9,7 @@ import {
   FaImage,
 } from "react-icons/fa";
 import ContactForm from "../sections/ContactForm";
+import Seo from "../common/Seo";
 import { Link } from "react-router-dom";
 
 const enfoque = [
@@ -103,6 +104,12 @@ function ImagePlaceholder({ caption, className = "" }) {
 export default function AboutPage() {
   return (
     <div className="newenche space-y-24">
+      <Seo
+        title="Quiénes somos"
+        description="Centro Newenche: un equipo especializado en adolescencia, familia y territorio. Conoce nuestra misión, visión y enfoque de acompañamiento en salud mental."
+        path="/quienes-somos"
+      />
+
       <section
         id="quienes-somos"
         data-reveal
@@ -122,15 +129,15 @@ export default function AboutPage() {
             </span>
           </h1>
           <p className="text-body mb-4 ml-1 max-w-xl text-lg text-justify">
-            Newenche nace desde una convicción profunda: ningún
-            adolescente puede ser comprendido fuera de su historia, su familia,
-            su colegio y su contexto.
+            Newenche nace desde una convicción profunda: ningún adolescente
+            puede ser comprendido fuera de su historia, su familia, su colegio y
+            su contexto.
           </p>
           <p className="text-body ml-1 max-w-xl text-lg text-justify">
             La adolescencia es una etapa decisiva. No es solo una edad de riesgo
-            o conflicto: es un periodo donde se construye la identidad, autonomía,
-            pertenencia, autoestima, proyectos de vida y formas de relacionarse
-            con el mundo.
+            o conflicto: es un periodo donde se construye la identidad,
+            autonomía, pertenencia, autoestima, proyectos de vida y formas de
+            relacionarse con el mundo.
           </p>
         </div>
         <div className="lg:col-span-6 mt-2 lg:mt-0 flex items-stretch">
@@ -164,7 +171,8 @@ export default function AboutPage() {
             className="pull-quote relative z-10 text-xl md:text-3xl"
             style={{ color: "var(--sand)" }}
           >
-            Abordamos la adolescencia de manera integral, desde una mirada salutogénica, fortalecedora, participativa y empoderante.
+            Abordamos la adolescencia de manera integral, desde una mirada
+            salutogénica, fortalecedora, participativa y empoderante.
           </h2>
         </div>
       </section>

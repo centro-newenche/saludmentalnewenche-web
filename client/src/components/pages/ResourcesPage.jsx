@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Seo from "../common/Seo";
+import { RESOURCES_SECTION_ENABLED } from "../../config/seoFlags";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
@@ -81,6 +83,13 @@ export default function ResourcesPage() {
 
   return (
     <div className="newenche space-y-10">
+      <Seo
+        title="Recursos y artículos sobre salud mental adolescente"
+        description="Reflexiones, orientaciones y novedades de Centro Newenche para adolescentes, familias y comunidad educativa."
+        path="/recursos"
+        noIndex={!RESOURCES_SECTION_ENABLED}
+      />
+
       <section data-reveal className="reveal-up">
         <p className="eyebrow mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em]">
           <span className="eyebrow-tick" aria-hidden="true" />

@@ -1,4 +1,5 @@
 import { FaSchool } from "react-icons/fa";
+import Seo from "../common/Seo";
 import ContactForm from "../sections/ContactForm";
 import {
   ProgramBreadcrumb,
@@ -25,6 +26,12 @@ const servicios = [
 export default function SchoolsAndNetworksPage() {
   return (
     <div className="newenche space-y-16">
+      <Seo
+        title="Colegios y redes"
+        description="Coordinación con colegios, equipos de convivencia escolar, equipos psicosociales e instituciones para acompañar de forma conjunta la salud mental adolescente."
+        path="/programas/colegios-redes"
+      />
+
       <ProgramBreadcrumb />
 
       <ProgramHero

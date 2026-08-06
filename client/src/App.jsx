@@ -26,6 +26,8 @@ import { useRevealOnScroll } from "./hooks/useRevealOnScroll";
 import { useScrollState } from "./hooks/useScrollState";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
+import Seo from "./components/common/Seo";
+import OrganizationSchema from "./components/common/OrganizationSchema";
 
 function App() {
   const [menuOpen, setMenuOPen] = useState(false);
@@ -39,20 +41,25 @@ function App() {
   return (
     <AdminAuthProvider>
       {isAdminRoute ? (
-        <Routes>
-          <Route path={ADMIN_LOGIN_PATH} element={<AdminLoginPage />} />
-          <Route path={ADMIN_DASHBOARD_PATH} element={<AdminDashboardPage />} />
-          <Route
-            path={`${ADMIN_DASHBOARD_PATH}/nuevo`}
-            element={<AdminArticleFormPage />}
-          />
-          <Route
-            path={`${ADMIN_DASHBOARD_PATH}/editar/:id`}
-            element={<AdminArticleFormPage />}
-          />
-        </Routes>
+        <>
+          <Seo title="Panel administrador" noIndex />
+          <Routes>
+            <Route path={ADMIN_LOGIN_PATH} element={<AdminLoginPage />} />
+            <Route path={ADMIN_DASHBOARD_PATH} element={<AdminDashboardPage />} />
+            <Route
+              path={`${ADMIN_DASHBOARD_PATH}/nuevo`}
+              element={<AdminArticleFormPage />}
+            />
+            <Route
+              path={`${ADMIN_DASHBOARD_PATH}/editar/:id`}
+              element={<AdminArticleFormPage />}
+            />
+          </Routes>
+        </>
       ) : (
         <div className="relative min-h-screen overflow-hidden bg-[#e2f3d9] text-emerald-900">
+          <Seo />
+          <OrganizationSchema />
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top, rgba(255,255,255,0.08),transparent_45%)]" />
 
           <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 py-12 sm:py-16 lg:w-[90%] lg:px-8 lg:py-24">

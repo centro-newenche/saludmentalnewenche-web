@@ -1,4 +1,5 @@
 import { FaHome } from "react-icons/fa";
+import Seo from "../common/Seo";
 import ContactForm from "../sections/ContactForm";
 import {
   ProgramBreadcrumb,
@@ -25,6 +26,12 @@ const temas = [
 export default function FamilyCounselingPage() {
   return (
     <div className="newenche space-y-16">
+      <Seo
+        title="Orientación familiar y psicoeducación"
+        description="Apoyo para madres, padres y cuidadores: herramientas concretas para comunicarse con adolescentes, poner límites, actuar frente a crisis o consumo, y saber cuándo pedir ayuda profesional."
+        path="/programas/orientacion"
+      />
+
       <ProgramBreadcrumb />
 
       <ProgramHero

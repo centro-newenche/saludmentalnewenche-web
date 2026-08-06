@@ -6,6 +6,7 @@ import {
   FaSchool,
   FaChalkboardTeacher,
 } from "react-icons/fa";
+import Seo from "../common/Seo";
 
 const programs = [
   {
@@ -98,6 +99,12 @@ function ProgramCard({ href, icon, title, image }) {
 export default function ProgramsPage() {
   return (
     <div className="newenche space-y-16">
+      <Seo
+        title="Programas para adolescentes y familias"
+        description="Conoce los programas de Centro Newenche: atención adolescente, rehabilitación de drogas y alcohol, acompañamiento familiar y territorial, orientación familiar, colegios y redes, y capacitaciones."
+        path="/programas"
+      />
+
       <section data-reveal className="reveal-up max-w-3xl">
         <Eyebrow>Programas</Eyebrow>
         <h1

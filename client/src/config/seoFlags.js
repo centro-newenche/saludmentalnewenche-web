@@ -1,0 +1,1 @@
+export const RESOURCES_SECTION_ENABLED = false;

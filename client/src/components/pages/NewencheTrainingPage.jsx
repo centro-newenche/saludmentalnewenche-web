@@ -1,4 +1,5 @@
 import { FaChalkboardTeacher } from "react-icons/fa";
+import Seo from "../common/Seo";
 import ContactForm from "../sections/ContactForm";
 import {
   ProgramBreadcrumb,
@@ -48,6 +49,12 @@ const modalidades = [
 export default function NewencheTrainingPage() {
   return (
     <div className="newenche space-y-16">
+      <Seo
+        title="Capacitaciones en salud mental adolescente"
+        description="Formación aplicada para colegios, municipios, equipos psicosociales y organizaciones comunitarias: salud mental adolescente, consumo problemático, primeros auxilios psicológicos e intervención familiar."
+        path="/programas/capacitaciones"
+      />
+
       <ProgramBreadcrumb />
 
       <ProgramHero
