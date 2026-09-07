@@ -7,8 +7,10 @@ import {
   FaBullseye,
   FaEye,
   FaImage,
+  FaArrowRight,
 } from "react-icons/fa";
 import ContactForm from "../sections/ContactForm";
+import TeamSection from "../sections/TeamSection";
 import Seo from "../common/Seo";
 import { Link } from "react-router-dom";
 
@@ -139,6 +141,15 @@ export default function AboutPage() {
             autonomía, pertenencia, autoestima, proyectos de vida y formas de
             relacionarse con el mundo.
           </p>
+          <div className="mt-6 ml-1">
+            <a
+              href="#equipo-profesional"
+              className="btn-secondary inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold transition hover:-translate-y-0.5"
+            >
+              Conoce a nuestro equipo
+              <FaArrowRight aria-hidden="true" />
+            </a>
+          </div>
         </div>
         <div className="lg:col-span-6 mt-2 lg:mt-0 flex items-stretch">
           <img
@@ -342,6 +353,8 @@ export default function AboutPage() {
           />
         </div>
       </section>
+
+      <TeamSection />
 
       <section
         data-reveal

@@ -85,6 +85,10 @@ a,
   margin: 0;
 }
 
+.faq-content > div {
+  overflow: hidden;
+}
+
 .faq-open {
   grid-template-rows: 1fr;
   opacity: 1;
