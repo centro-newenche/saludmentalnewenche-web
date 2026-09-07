@@ -66,7 +66,7 @@ const team = [
     attention: "Atención online",
     schedule: "Lunes a jueves: 09:00 a 18:00 hrs. Viernes: 09:00 a 17:00 hrs.",
     price: "$25.000 por sesión",
-    bookingUrl: "agendamiento.reservo.cl/makereserva/agenda/D0RQIhC0k0NAHk7W9g73aTF3b6z0ep",
+    bookingUrl: "https://agendamiento.reservo.cl/makereserva/agenda/D0RQIhC0k0NAHk7W9g73aTF3b6z0ep",
   },
   {
     id: "psicologo-clinico",
