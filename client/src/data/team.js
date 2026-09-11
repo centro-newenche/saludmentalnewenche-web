@@ -87,6 +87,32 @@ const team = [
     price: "$25.000 por sesión",
     bookingUrl: "https://agendamiento.reservo.cl/makereserva/agenda/P0yUBpE060F0mT4f9h23Q3f3T4v0Mq",
   },
+  {
+    id: "tecnico-rehabilitacion",
+    name: "Daniela Parraguez",
+    title: "Técnico en rehabilitación",
+    photo: "/team/tecnico-rehabilitacion.png",
+    bio: "Técnico en rehabilitación con 14 años de experiencia en el ámbito de las adicciones y la rehabilitación, con trayectoria en programas ambulatorios intensivos, COSAM y programas especializados para adolescentes y adultos. Su trabajo está orientado al abordaje del consumo de alcohol y otras drogas, así como del uso problemático de pantallas, videojuegos y otras conductas adictivas, mediante una intervención integral centrada en la motivación al cambio, la problematización de conductas de riesgo, la psicoeducación, el fortalecimiento de habilidades personales y la prevención de recaídas.",
+    topics: [
+      "Consumo problemático de alcohol y otras drogas",
+      "Uso problemático de pantallas y videojuegos",
+      "Otras conductas adictivas",
+      "Evaluación integral de situaciones de consumo y conductas de riesgo",
+      "Motivación al cambio",
+      "Prevención de recaídas",
+      "Reducción de daños",
+      "Psicoeducación",
+      "Fortalecimiento de habilidades personales",
+      "Intervención individual y familiar",
+      "Elaboración de planes de tratamiento",
+      "Acompañamiento a adolescentes y adultos",
+    ],
+    modality: "Rehabilitación y acompañamiento en adicciones",
+    attention: "Atención online",
+    schedule: "Lunes de 09:00 a 11:00 hrs y Martes a Viernes de 14:30 a 17:30 hrs. ",
+    price: "$25.000 por sesión",
+    bookingUrl: "https://agendamiento.reservo.cl/makereserva/agenda/F0u13d20B0jzSo749M432gA344d0uc",
+  },
 ];
 
 export default team;

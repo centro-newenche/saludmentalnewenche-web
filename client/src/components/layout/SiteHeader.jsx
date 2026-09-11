@@ -124,7 +124,7 @@ export default function SiteHeader({
             className="btn-primary hidden cursor-pointer rounded-lg px-5 py-2 text-sm font-medium transition lg:inline-flex lg:items-center lg:gap-2"
           >
             <FaCalendarAlt />
-            Agenda tu consulta
+            Agenda tu hora aquí
           </Link>
 
           {admin && (
@@ -215,7 +215,7 @@ export default function SiteHeader({
               className="btn-primary mt-2 inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-semibold transition"
             >
               <FaCalendarAlt />
-              Agenda tu consulta
+              Agenda tu hora aquí
             </Link>
           </div>
         </div>
