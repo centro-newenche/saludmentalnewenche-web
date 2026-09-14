@@ -14,6 +14,7 @@ import FamilyCounselingPage from "./components/pages/FamilyCounselingPage";
 import SchoolsAndNetworksPage from "./components/pages/SchoolsAndNetworksPage";
 import NewencheTrainingPage from "./components/pages/NewencheTrainingPage";
 import ContactPage from "./components/pages/ContactPage";
+import SchedulingPage from "./components/pages/SchedulingPage";
 import AdminLoginPage from "./components/pages/AdminLoginPage";
 import AdminDashboardPage from "./components/pages/AdminDashboardPage";
 import AdminArticleFormPage from "./components/pages/AdminArticleFormPage";
@@ -93,6 +94,7 @@ function App() {
                 element={<NewencheTrainingPage />}
               />
               <Route path="/contacto" element={<ContactPage />} />
+              <Route path="/agendar" element={<SchedulingPage />} />
               <Route path="/recursos" element={<ResourcesPage />} />
               <Route path="/recursos/:slug" element={<ResourceDetailPage />} />
             </Routes>
