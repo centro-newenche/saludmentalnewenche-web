@@ -29,12 +29,14 @@ export default function SchedulingPage() {
             className="font-display mb-4 text-3xl font-semibold leading-[1.15] md:text-[2.6rem]"
             style={{ color: "var(--pine)" }}
           >
-            Elige al profesional adecuado para ti
+            Encuentra al profesional adecuado para ti
           </h1>
           <p className="text-body text-lg text-justify">
-            Revisa el perfil de cada integrante de nuestro equipo y agenda tu
-            sesión directamente cuando encuentres el que mejor se ajuste a lo
-            que necesitas.
+            Conoce a nuestro equipo, revisa la experiencia y especialidad de cada profesional y elige a quien mejor se adapte a tus necesidades o las de tu familia.
+          </p>
+          <br></br>
+          <p className="text-body text-lg text-justify">
+            Cuando encuentres la opción adecuada, puedes agendar tu sesión directamente de forma simple y segura.
           </p>
         </div>
 
