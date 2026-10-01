@@ -21,11 +21,11 @@ export default function SiteFooter() {
               contacto@centronewenche.cl
             </a>
             <a
-              href="tel:+5691234567"
+              href="tel:+56942227144"
               className="inline-flex items-center gap-2 whitespace-nowrap hover:text-blue-300"
             >
               <FaPhone />
-              +56 9 7805 9311
+              +56 9 4222 7144
             </a>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">

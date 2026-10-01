@@ -9,7 +9,7 @@ export default function OrganizationSchema() {
     url: SITE_URL,
     logo: `${SITE_URL}/logo-newenche.png`,
     image: `${SITE_URL}/logo-newenche.png`,
-    telephone: "+56978059311",
+    telephone: "+56942227144",
     email: "contacto@centronewenche.cl",
     address: {
       "@type": "PostalAddress",
