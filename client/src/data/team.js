@@ -119,6 +119,29 @@ const team = [
     price:"$85.000 por sesión · 60 minutos",
     bookingUrl:"https://agendamiento.reservo.cl/makereserva/agenda/q0AeEab0r0l37k1w9q03i7L3T5X0V7",
   },
+  {
+    id:"terapeuta-ocupacional",
+    name:"Francisca Javiera Salvo Martínez",
+    title:"Terapeuta Ocupacional",
+    photo:"/team/terapeuta-ocupacional.jpeg",
+    bio:"Terapeuta ocupacional titulada de la Universidad Mayor, diplomada en Modelo de Ocupación Humana (MOHO) y en Reducción del Daño y Gestión del Riesgo, con cerca de 10 años de experiencia en salud mental. Cuenta con trayectoria en programas ambulatorios intensivos para adolescentes y adultos, con experiencia en rehabilitación psicosocial, consumo problemático de alcohol y otras drogas e intervención individual, familiar y grupal en contextos de alta complejidad psicosocial. Su trabajo integra la salud mental comunitaria, la perspectiva de derechos y el Modelo de Ocupación Humana, promoviendo la autonomía, la construcción de rutinas saludables, la recuperación y la participación en actividades significativas.",
+    topics:[
+      "Salud mental adolescente y juvenil",
+      "Consumo problemático de alcohol y otras drogas",
+      "Terapia ocupacional y rehabilitación psicosocial",
+      "Desarrollo de autonomía y habilidades personales",
+      "Construcción de hábitos y rutinas saludables",
+      "Participación en actividades significativas",
+      "Acompañamiento familiar y comunitario",
+      "Apoyo desde terapia ocupacional en trastornos de la conducta alimentaria (TCA)",
+      "Recuperación y participación en los entornos educativo y comunitario",
+    ],
+    modality:"Terapia ocupacional en salud mental adolescente y comunitaria.",
+    attention:"Atención online",
+    schedule:"Miércoles, 18:00 a 22:00 hrs",
+    price:"$25.000 por sesión",
+    bookingUrl:"https://agendamiento.reservo.cl/makereserva/agenda/Q0Yi7oQ0c0Ckva9O9i23kxi3Y940Oj",
+  },
 ];
 
 export default team;
